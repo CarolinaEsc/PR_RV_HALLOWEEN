@@ -18,8 +18,8 @@ RenderSettings:
   m_FogColor: {r: 0.01886791, g: 0.01886791, b: 0.01886791, a: 1}
   m_FogMode: 1
   m_FogDensity: 0.05
-  m_LinearFogStart: 2.9
-  m_LinearFogEnd: 27.4
+  m_LinearFogStart: 3.32
+  m_LinearFogEnd: 35.35
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
@@ -331,7 +331,6 @@ MonoBehaviour:
   enemy_1: {fileID: 5118395894700249597, guid: 02bb7d8bce5e00c4b93eee465d414176, type: 3}
   enemy_2: {fileID: 8261144797531992487, guid: fad830c276ef8484ea280fe4c55742e8, type: 3}
   timer: 0
-  timeToSpawn: 10
   velocity: 0.1
 --- !u!1 &41317421
 GameObject:
@@ -580,7 +579,6 @@ MonoBehaviour:
   enemy_1: {fileID: 5118395894700249597, guid: 02bb7d8bce5e00c4b93eee465d414176, type: 3}
   enemy_2: {fileID: 8261144797531992487, guid: fad830c276ef8484ea280fe4c55742e8, type: 3}
   timer: 0
-  timeToSpawn: 10
   velocity: 0.1
 --- !u!1 &64973319
 GameObject:
@@ -7457,7 +7455,6 @@ MonoBehaviour:
   enemy_1: {fileID: 5118395894700249597, guid: 02bb7d8bce5e00c4b93eee465d414176, type: 3}
   enemy_2: {fileID: 8261144797531992487, guid: fad830c276ef8484ea280fe4c55742e8, type: 3}
   timer: 0
-  timeToSpawn: 10
   velocity: 0.1
 --- !u!1 &447966269
 GameObject:
@@ -7505,7 +7502,6 @@ MonoBehaviour:
   enemy_1: {fileID: 5118395894700249597, guid: 02bb7d8bce5e00c4b93eee465d414176, type: 3}
   enemy_2: {fileID: 8261144797531992487, guid: fad830c276ef8484ea280fe4c55742e8, type: 3}
   timer: 0
-  timeToSpawn: 10
   velocity: 0.1
 --- !u!1 &448894519
 GameObject:
@@ -8929,7 +8925,6 @@ MonoBehaviour:
   enemy_1: {fileID: 5118395894700249597, guid: 02bb7d8bce5e00c4b93eee465d414176, type: 3}
   enemy_2: {fileID: 8261144797531992487, guid: fad830c276ef8484ea280fe4c55742e8, type: 3}
   timer: 0
-  timeToSpawn: 10
   velocity: 0.1
 --- !u!1 &829189267
 GameObject:
@@ -13943,7 +13938,6 @@ MonoBehaviour:
   enemy_1: {fileID: 5118395894700249597, guid: 02bb7d8bce5e00c4b93eee465d414176, type: 3}
   enemy_2: {fileID: 8261144797531992487, guid: fad830c276ef8484ea280fe4c55742e8, type: 3}
   timer: 0
-  timeToSpawn: 10
   velocity: 0.1
 --- !u!1 &882465739
 GameObject:
@@ -14030,7 +14024,6 @@ MonoBehaviour:
   enemy_1: {fileID: 5118395894700249597, guid: 02bb7d8bce5e00c4b93eee465d414176, type: 3}
   enemy_2: {fileID: 8261144797531992487, guid: fad830c276ef8484ea280fe4c55742e8, type: 3}
   timer: 0
-  timeToSpawn: 10
   velocity: 0.1
 --- !u!1 &900083016
 GameObject:
@@ -14483,7 +14476,6 @@ MonoBehaviour:
   enemy_1: {fileID: 5118395894700249597, guid: 02bb7d8bce5e00c4b93eee465d414176, type: 3}
   enemy_2: {fileID: 8261144797531992487, guid: fad830c276ef8484ea280fe4c55742e8, type: 3}
   timer: 0
-  timeToSpawn: 10
   velocity: 0.1
 --- !u!1 &1070966330
 GameObject:
@@ -14984,7 +14976,7 @@ GameObject:
   - component: {fileID: 1171315070}
   - component: {fileID: 1171315069}
   m_Layer: 0
-  m_Name: Capsule
+  m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -21445,7 +21437,6 @@ MonoBehaviour:
   enemy_1: {fileID: 5118395894700249597, guid: 02bb7d8bce5e00c4b93eee465d414176, type: 3}
   enemy_2: {fileID: 8261144797531992487, guid: fad830c276ef8484ea280fe4c55742e8, type: 3}
   timer: 0
-  timeToSpawn: 10
   velocity: 0.1
 --- !u!1 &1413351971
 GameObject:
@@ -22441,7 +22432,6 @@ MonoBehaviour:
   enemy_1: {fileID: 5118395894700249597, guid: 02bb7d8bce5e00c4b93eee465d414176, type: 3}
   enemy_2: {fileID: 8261144797531992487, guid: fad830c276ef8484ea280fe4c55742e8, type: 3}
   timer: 0
-  timeToSpawn: 10
   velocity: 0.1
 --- !u!1 &1619268767
 GameObject:
@@ -22651,7 +22641,6 @@ MonoBehaviour:
   enemy_1: {fileID: 5118395894700249597, guid: 02bb7d8bce5e00c4b93eee465d414176, type: 3}
   enemy_2: {fileID: 8261144797531992487, guid: fad830c276ef8484ea280fe4c55742e8, type: 3}
   timer: 0
-  timeToSpawn: 10
   velocity: 0.1
 --- !u!1 &1696935497
 GameObject:
@@ -23995,7 +23984,6 @@ MonoBehaviour:
   enemy_1: {fileID: 5118395894700249597, guid: 02bb7d8bce5e00c4b93eee465d414176, type: 3}
   enemy_2: {fileID: 8261144797531992487, guid: fad830c276ef8484ea280fe4c55742e8, type: 3}
   timer: 0
-  timeToSpawn: 10
   velocity: 0.1
 --- !u!1 &1923031710
 GameObject:
