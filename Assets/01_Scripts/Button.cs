@@ -5,9 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class Button : MonoBehaviour
 {
+    public GameObject gameOverScreen;
+    public GameObject Ui;
+
+
     void Start()
     {
-        
+
     }
 
     void Update()
@@ -15,9 +19,8 @@ public class Button : MonoBehaviour
         
     }
 
-    public void Restart(){
-        Time.timeScale = 1;
-        SceneManager.LoadScene("Game");
-        Debug.Log("Restart");
+    public void RestartGame(){
+        gameOverScreen.SetActive(false);
+        SceneManager.LoadScene("GAME");
     }
 }

@@ -2,10 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Spawner : MonoBehaviour
+public class Spawner2 : MonoBehaviour
 {
     public GameObject enemy_1;
-    public GameObject enemy_2;
     int spawnRandom = 0;
     public float timer = 0;
     float timeToSpawn;
@@ -36,15 +35,6 @@ public class Spawner : MonoBehaviour
                 Instantiate(enemy_1, this.transform.transform.position, this.transform.rotation); 
                 timer = 0;      
             }
-            else
-            {
-                if(spawnRandom >= 23 && spawnRandom <=25)
-                {
-                    Instantiate(enemy_2, this.transform.transform.position, this.transform.rotation);        
-                    timer = 0;
-                }
-            }
         }
     }
-
 }
