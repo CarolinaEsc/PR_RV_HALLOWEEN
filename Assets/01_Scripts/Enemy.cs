@@ -35,7 +35,10 @@ public class Enemy : MonoBehaviour
             //Caminar
             myTransform.position += myTransform.forward * moveSpeed * Time.deltaTime;
 
+
         }
+
+        
     }
 
     

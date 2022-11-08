@@ -23,12 +23,12 @@ public class Player : MonoBehaviour
     public Text livesTxt2;
     //----------------------------------------------------------------
     public GameObject gameoverScreen;
-    public GameObject Ui;
+    public GameObject ui;
 
     //----------------------------------------------------------------
     void Start()
     {
-        Ui.SetActive(true);
+        ui.SetActive(true);
         if (SystemInfo.supportsGyroscope)
         {
             //Abilita el giroscopiods
@@ -75,7 +75,9 @@ public class Player : MonoBehaviour
             Destroy(other.gameObject);
             if(lives <= 0)
             {
+                ui.SetActive(false);
                 gameoverScreen.SetActive(true);
+                Time.timeScale = 0;
             }
         }
     }
