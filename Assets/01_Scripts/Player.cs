@@ -17,8 +17,6 @@ public class Player : MonoBehaviour
     public float speed = 5;
     public int points = 0;
     public int lives = 10;
-    public Text pointsTxt;
-    public Text pointsTxt2;
     public Text livesTxt;
     public Text livesTxt2;
     //----------------------------------------------------------------
@@ -26,6 +24,14 @@ public class Player : MonoBehaviour
     public GameObject ui;
 
     //----------------------------------------------------------------
+    public GameObject Bala;
+    public Transform Arma;
+
+    void Awake()
+    {
+  
+    }
+
     void Start()
     {
         ui.SetActive(true);
@@ -49,8 +55,9 @@ public class Player : MonoBehaviour
             float yFilterd = FilterGyroValue(y);
             transform.RotateAround(transform.position, transform.up, - yFilterd * sensivity * Time.deltaTime);
         }
-        pointsTxt.text = points.ToString();
-        pointsTxt2.text = points.ToString();
+
+
+        
     }
 
     float FilterGyroValue(float axis)
@@ -80,6 +87,11 @@ public class Player : MonoBehaviour
                 Time.timeScale = 0;
             }
         }
+    }
+
+    void Fire()
+    {
+
     }
 
 }
