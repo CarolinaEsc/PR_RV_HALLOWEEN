@@ -1,14 +1,23 @@
 {
-    "name": "PlayerIn",
+    "name": "Inputs",
     "maps": [
         {
             "name": "Player",
-            "id": "6d1aeade-422a-4897-a8a4-f36d191b8868",
+            "id": "a3fccf8d-26eb-4422-a453-e27532e91332",
             "actions": [
                 {
-                    "name": "Fire",
+                    "name": "Shoot",
                     "type": "Button",
-                    "id": "ef49c644-011e-447c-b7c6-28409b0d9734",
+                    "id": "1d90fe89-e638-4ddb-8226-d661042f69b6",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "SuperShoot",
+                    "type": "Button",
+                    "id": "56e5ceaf-c602-4a09-a6a7-abc8020e779f",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -18,23 +27,23 @@
             "bindings": [
                 {
                     "name": "",
-                    "id": "f5b988ee-5f86-4747-a51a-dd050d394351",
-                    "path": "<Keyboard>/space",
+                    "id": "9250a987-8cf1-49ac-87c3-a68a066c48b7",
+                    "path": "<Gamepad>/buttonSouth",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Fire",
+                    "action": "Shoot",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "c6379a2d-f5dc-422b-82d5-a70f6213772c",
-                    "path": "<Gamepad>/buttonSouth",
+                    "id": "bbbbfdda-5a14-4e05-8a67-95e89587a1d9",
+                    "path": "<Gamepad>/buttonNorth",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Fire",
+                    "action": "SuperShoot",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
