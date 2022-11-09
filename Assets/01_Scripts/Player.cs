@@ -35,6 +35,8 @@ public class Player : MonoBehaviour
     float power = 50;
     int timer = 0;
 
+    public int puntaje = 0;
+
     void OnEnable()
     {
         inputs.Enable();
@@ -131,9 +133,11 @@ public class Player : MonoBehaviour
     }
 
     public void SubirPuntos(int puntos){
-        Debug.Log("Subo "+puntos);
-        pointsTxt.text =  puntos + "";
-        pointsTxt2.text = puntos+ "";
+        puntaje = puntaje + puntos;
+        pointsTxt.text =  puntaje + "";
+        pointsTxt2.text = puntaje + "";
     }
+
+
 
 }
