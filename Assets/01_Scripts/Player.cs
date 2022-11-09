@@ -30,8 +30,8 @@ public class Player : MonoBehaviour
     public GameObject superBala;
     public GameObject punto;
     public Image lifeBar;
-    float maxHP 300;
-    float hp 150;
+    float maxHP = 300;
+    float hp = 150;
 
 
     void Start()
