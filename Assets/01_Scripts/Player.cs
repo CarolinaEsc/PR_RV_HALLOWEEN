@@ -17,29 +17,35 @@ public class Player : MonoBehaviour
     public float speed = 5;
     public int points = 0;
     public int lives = 10;
-    public Text pointsTxt;
-    public Text pointsTxt2;
     public Text livesTxt;
     public Text livesTxt2;
+    public Text pointsTxt;
+    public Text pointsTxt2;
     //----------------------------------------------------------------
     public GameObject gameoverScreen;
     public GameObject ui;
-
-    //----------------------------------------------------------------
-
     public GameObject superBala;
+    public GameObject bala;
     public GameObject punto;
-    public Image lifeBar;
-    float maxHP = 300;
-    float hp = 150;
+    //----------------------------------------------------------------
+    public Inputs inputs;
 
+    public Image powerBar;
+    float maxPower = 300;
+    float power = 300;
+    int timer = 0;
+
+    private void Awake() {
+        inputs = new Inputs();
+        inputs.Player.Shoot.performed += ctx => Fire();
+        inputs.Player.SuperShoot.performed += ctx => InstanciarBala();
+    }
 
     void Start()
     {
         ui.SetActive(true);
         if (SystemInfo.supportsGyroscope)
         {
-            //Abilita el giroscopiods
             gyro = Input.gyro;
             gyro.enabled = true;
         }
@@ -61,8 +67,15 @@ public class Player : MonoBehaviour
         pointsTxt.text = points.ToString();
         pointsTxt2.text = points.ToString();
 
-        Invoke("InstanciarBala", 2f);
+        if(timer < 30)
+        {
+            timer++;
+            powerBar.fillAmount = power / maxPower;
+        }else{
+            timer = 0;
+        }   
 
+        
     }
 
     float FilterGyroValue(float axis)
@@ -95,6 +108,14 @@ public class Player : MonoBehaviour
     }
 
     private void InstanciarBala(){
+
         Instantiate(superBala, punto.transform.position, punto.transform.rotation);
+        power = 10;
     }
+
+    void Fire()
+    {
+        Instantiate(bala, punto.transform.position, punto.transform.rotation);
+    }
+
 }
