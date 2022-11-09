@@ -8806,6 +8806,36 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 8, y: 1.1, z: 8}
   m_Center: {x: -0.099999905, y: 0.55, z: 0.30000007}
+--- !u!1 &587108440
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 587108441}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &587108441
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 587108440}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0.99}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1848693192}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &616835456
 GameObject:
   m_ObjectHideFlags: 0
@@ -26527,6 +26557,8 @@ MonoBehaviour:
   livesTxt2: {fileID: 379825839}
   gameoverScreen: {fileID: 1484673269}
   ui: {fileID: 8796111592522498637}
+  superBala: {fileID: 2672589759089411603, guid: 48010f6bda24dfd4cb5641e8a7188c91, type: 3}
+  punto: {fileID: 587108440}
 --- !u!136 &1848693189
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -26602,6 +26634,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5479833226196778809}
+  - {fileID: 587108441}
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

@@ -26,6 +26,14 @@ public class Player : MonoBehaviour
     public GameObject ui;
 
     //----------------------------------------------------------------
+
+    public GameObject superBala;
+    public GameObject punto;
+    public Image lifeBar;
+    float maxHP 300;
+    float hp 150;
+
+
     void Start()
     {
         ui.SetActive(true);
@@ -49,8 +57,12 @@ public class Player : MonoBehaviour
             float yFilterd = FilterGyroValue(y);
             transform.RotateAround(transform.position, transform.up, - yFilterd * sensivity * Time.deltaTime);
         }
+
         pointsTxt.text = points.ToString();
         pointsTxt2.text = points.ToString();
+
+        Invoke("InstanciarBala", 2f);
+
     }
 
     float FilterGyroValue(float axis)
@@ -82,4 +94,7 @@ public class Player : MonoBehaviour
         }
     }
 
+    private void InstanciarBala(){
+        Instantiate(superBala, punto.transform.position, punto.transform.rotation);
+    }
 }
