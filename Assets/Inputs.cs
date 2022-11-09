@@ -44,6 +44,24 @@ public partial class @Inputs : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Disparo"",
+                    ""type"": ""Button"",
+                    ""id"": ""2d543af5-0bc0-4bcf-9f0c-ef52df1a11f9"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""SuperDisparo"",
+                    ""type"": ""Button"",
+                    ""id"": ""5de672a2-65e4-4e96-ab8a-dd86ecc0c77c"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -68,6 +86,28 @@ public partial class @Inputs : IInputActionCollection2, IDisposable
                     ""action"": ""SuperShoot"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2f0b5b47-95f7-44a1-a3cc-d74515cb93d0"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Disparo"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""500ffe90-71a8-4a0c-a1ad-15871aafd0b5"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SuperDisparo"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -78,6 +118,8 @@ public partial class @Inputs : IInputActionCollection2, IDisposable
         m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
         m_Player_Shoot = m_Player.FindAction("Shoot", throwIfNotFound: true);
         m_Player_SuperShoot = m_Player.FindAction("SuperShoot", throwIfNotFound: true);
+        m_Player_Disparo = m_Player.FindAction("Disparo", throwIfNotFound: true);
+        m_Player_SuperDisparo = m_Player.FindAction("SuperDisparo", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -139,12 +181,16 @@ public partial class @Inputs : IInputActionCollection2, IDisposable
     private IPlayerActions m_PlayerActionsCallbackInterface;
     private readonly InputAction m_Player_Shoot;
     private readonly InputAction m_Player_SuperShoot;
+    private readonly InputAction m_Player_Disparo;
+    private readonly InputAction m_Player_SuperDisparo;
     public struct PlayerActions
     {
         private @Inputs m_Wrapper;
         public PlayerActions(@Inputs wrapper) { m_Wrapper = wrapper; }
         public InputAction @Shoot => m_Wrapper.m_Player_Shoot;
         public InputAction @SuperShoot => m_Wrapper.m_Player_SuperShoot;
+        public InputAction @Disparo => m_Wrapper.m_Player_Disparo;
+        public InputAction @SuperDisparo => m_Wrapper.m_Player_SuperDisparo;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -160,6 +206,12 @@ public partial class @Inputs : IInputActionCollection2, IDisposable
                 @SuperShoot.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSuperShoot;
                 @SuperShoot.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSuperShoot;
                 @SuperShoot.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSuperShoot;
+                @Disparo.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDisparo;
+                @Disparo.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDisparo;
+                @Disparo.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDisparo;
+                @SuperDisparo.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSuperDisparo;
+                @SuperDisparo.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSuperDisparo;
+                @SuperDisparo.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSuperDisparo;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -170,6 +222,12 @@ public partial class @Inputs : IInputActionCollection2, IDisposable
                 @SuperShoot.started += instance.OnSuperShoot;
                 @SuperShoot.performed += instance.OnSuperShoot;
                 @SuperShoot.canceled += instance.OnSuperShoot;
+                @Disparo.started += instance.OnDisparo;
+                @Disparo.performed += instance.OnDisparo;
+                @Disparo.canceled += instance.OnDisparo;
+                @SuperDisparo.started += instance.OnSuperDisparo;
+                @SuperDisparo.performed += instance.OnSuperDisparo;
+                @SuperDisparo.canceled += instance.OnSuperDisparo;
             }
         }
     }
@@ -178,5 +236,7 @@ public partial class @Inputs : IInputActionCollection2, IDisposable
     {
         void OnShoot(InputAction.CallbackContext context);
         void OnSuperShoot(InputAction.CallbackContext context);
+        void OnDisparo(InputAction.CallbackContext context);
+        void OnSuperDisparo(InputAction.CallbackContext context);
     }
 }

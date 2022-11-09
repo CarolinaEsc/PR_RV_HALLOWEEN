@@ -9,7 +9,6 @@ public class Enemy : MonoBehaviour
     float rotationSpeed = 6;
 
     Transform myTransform;
-    // Start is called before the first frame update
     void Awake()
     {
         myTransform = transform;
@@ -20,7 +19,6 @@ public class Enemy : MonoBehaviour
         target = GameObject.FindWithTag("Player").transform; //target the player
     }
     
-    // Update is called once per frame
     void Update()
     {
         //Calcular distancia
@@ -34,11 +32,7 @@ public class Enemy : MonoBehaviour
             Quaternion.LookRotation(target.position - myTransform.position), rotationSpeed*Time.deltaTime);
             //Caminar
             myTransform.position += myTransform.forward * moveSpeed * Time.deltaTime;
-
-
         }
-
-        
     }
 
     

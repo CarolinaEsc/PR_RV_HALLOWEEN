@@ -32,13 +32,25 @@ public class Player : MonoBehaviour
 
     public Image powerBar;
     float maxPower = 300;
-    float power = 300;
+    float power = 50;
     int timer = 0;
+
+    void OnEnable()
+    {
+        inputs.Enable();
+    }
+
+    void OnDisable()
+    {
+        inputs.Disable();
+    }
 
     private void Awake() {
         inputs = new Inputs();
         inputs.Player.Shoot.performed += ctx => Fire();
+        inputs.Player.Disparo.performed += ctx => Fire();
         inputs.Player.SuperShoot.performed += ctx => InstanciarBala();
+        inputs.Player.SuperDisparo.performed += ctx => InstanciarBala();
     }
 
     void Start()
@@ -64,18 +76,15 @@ public class Player : MonoBehaviour
             transform.RotateAround(transform.position, transform.up, - yFilterd * sensivity * Time.deltaTime);
         }
 
-        pointsTxt.text = points.ToString();
-        pointsTxt2.text = points.ToString();
 
-        if(timer < 30)
+        if(timer < 3)
         {
             timer++;
             powerBar.fillAmount = power / maxPower;
         }else{
             timer = 0;
+            power++;
         }   
-
-        
     }
 
     float FilterGyroValue(float axis)
@@ -108,14 +117,23 @@ public class Player : MonoBehaviour
     }
 
     private void InstanciarBala(){
-
-        Instantiate(superBala, punto.transform.position, punto.transform.rotation);
-        power = 10;
+        if(power >= maxPower){
+            Instantiate(superBala, punto.transform.position, punto.transform.rotation);
+            power = 10;
+        }else{
+            Debug.Log("Cargando poder");
+        }
     }
 
     void Fire()
     {
         Instantiate(bala, punto.transform.position, punto.transform.rotation);
+    }
+
+    public void SubirPuntos(int puntos){
+        Debug.Log("Subo "+puntos);
+        pointsTxt.text =  puntos + "";
+        pointsTxt2.text = puntos+ "";
     }
 
 }
